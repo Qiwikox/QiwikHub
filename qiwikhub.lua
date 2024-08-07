@@ -1,175 +1,189 @@
--- sobaka sigma and lufli
+local rolibwaita = loadstring(game:HttpGet("https://codeberg.org/Blukez/rolibwaita/raw/branch/master/Source.lua"))()
 
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Qiwik Hub [Solara]", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
-
-local CreditsTab = Window:MakeTab({
-	Name = "Credits",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-CreditsTab:AddParagraph("Owner/Main Dev","qiwikox")
-CreditsTab:AddParagraph("Friend","Sobaka, Lufli")
-
-local Tsb = Window:MakeTab({
-	Name = "TS Battleground",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-Tsb:AddParagraph("FFJ HUB","★★★★☆")
-Tsb:AddButton({
-	Name = "FFJ HUB",
-	Callback = function()
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/TSBUtils.lua"))()
-  	end    
+local Window = rolibwaita:NewWindow({
+    Name = "Qiwik Hub [Solara Support]", -- Name of window | string, required
+    Keybind = "RightShift" -- Keybind to open and close this window | string, required
 })
 
-Tsb:AddParagraph("NOBULEM HUB","★☆☆☆☆")
-Tsb:AddButton({
-	Name = "NOBULEM HUB",
-	Callback = function()
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/NBLMSCRIPTS/NBLMSCRIPTHUB/main/SKIBIDI"))()
-  	end    
+local Tab1 = Window:NewTab({
+    Name = "Credits", -- Name of the tab | string, required
+    Icon = "rbxassetid://15487933546" -- Icon for the tab button | string, optional
 })
 
-Tsb:AddParagraph("UNIVERSAL SPEED HACK","★★★★★")
-Tsb:AddButton({
-	Name = "SPEED HACK",
-	Callback = function()
-      		function isNumber(str) if tonumber(str) ~= nil or str == 'inf' then return true end end local tspeed = 3 local hb = game:GetService("RunService").Heartbeat local tpwalking = true local player = game:GetService("Players") local lplr = player.LocalPlayer local chr = lplr.Character local hum = chr and chr:FindFirstChildWhichIsA("Humanoid") while tpwalking and hb:Wait() and chr and hum and hum.Parent do if hum.MoveDirection.Magnitude > 0 then if tspeed and isNumber(tspeed) then chr:TranslateBy(hum.MoveDirection * tonumber(tspeed)) else chr:TranslateBy(hum.MoveDirection) end end end
-  	end    
+local Section1 = Tab1:NewSection({
+    Name = "", -- Name of the section | string, required
+    Description = "Main Dev", -- Description of the section | string, optional 
 })
 
-Tsb:AddParagraph("INF YIELD","★★★★★")
-Tsb:AddButton({
-	Name = "INF YIELD",
-	Callback = function()
-      		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-  	end    
+local Button = Section1:NewButton({
+    Name = "Qiwik", -- Name of the button | string, required
+    Description = "qiwikox",  -- Description of the button | string, optional 
+    Callback = function(value)
+         print("woah") -- code executed on interaction with the element | function,  optional
+
+    end,
 })
 
-local mm2 = Window:MakeTab({
-	Name = "MM2",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
+local Section2 = Tab1:NewSection({
+    Name = "", -- Name of the section | string, required
+    Description = "Friends", -- Description of the section | string, optional 
 })
 
-mm2:AddParagraph("SNAPSANIX HUB","★★★★★")
-mm2:AddButton({
-	Name = "SHAPSANIX HUB",
-	Callback = function()
-      		loadstring(game:HttpGet('https://raw.githubusercontent.com/Roman34296589/SnapSanix-GUI-MM2/main/SnapSanix%20GUI%20mm2.lua'))()
-  	end    
+local Button = Section2:NewButton({
+    Name = "Sobaka", -- Name of the button | string, required
+    Description = ".sobachonok",  -- Description of the button | string, optional 
+    Callback = function(value)
+         print("wow") -- code executed on interaction with the element | function,  optional
+
+    end,
 })
 
-mm2:AddParagraph("DEMONIC HUB","★★★☆☆")
-mm2:AddButton({
-	Name = "DEMONIC HUB",
-	Callback = function()
-      		loadstring(game:HttpGet(("https://raw.githubusercontent.com/Yousuck780/mm2/main/mm2"), true))()
-  	end    
+local Tab2 = Window:NewTab({
+    Name = "Others Hub", -- Name of the tab | string, required
+    Icon = "rbxassetid://2234234" -- Icon for the tab button | string, optional
 })
 
-mm2:AddParagraph("SHRIMPS HUB","★★★☆☆")
-mm2:AddButton({
-	Name = "SHRIMPS HUB",
-	Callback = function()
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/ShrimpsHub/ShrimpsHub/main/ShrimpsHub"))()
-  	end    
+local Section3 = Tab2:NewSection({
+    Name = "", -- Name of the section | string, required
+    Description = "Hubs", -- Description of the section | string, optional 
+})
+
+local Button = Section3:NewButton({
+    Name = "Nut Hub", -- Name of the button | string, required
+    Description = "???",  -- Description of the button | string, optional 
+    Callback = function(value)
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/Qrto1/working/main/pc"))() -- code executed on interaction with the element | function,  optional
+
+    end,
 })
 
 
-mm2:AddParagraph("UNIVERSAL ESP","★★★★★")
-mm2:AddButton({
-	Name = "ESP",
-	Callback = function()
-      		loadstring(game:HttpGet('https://raw.githubusercontent.com/Qiwikox/Mm2-Scripts/main/ESP_MM2.txt'))()
-  	end    
+local Tab = Window:NewTab({
+    Name = "TS Battleground", -- Name of the tab | string, required
+    Icon = "rbxassetid://1234" -- Icon for the tab button | string, optional
 })
 
-local desctr = Window:MakeTab({
-	Name = "Destruction Simulator",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
+local Section = Tab:NewSection({
+    Name = "The Strongest Battleground", -- Name of the section | string, required
+    Description = "  Scripts", -- Description of the section | string, optional 
 })
 
-desctr:AddParagraph("SHRIMPS HUB","★★★★★")
-desctr:AddButton({
-	Name = "SHRIMPS HUB",
-	Callback = function()
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/ShrimpsHub/ShrimpsHub/main/ShrimpsHub"))()
-  	end    
+local Button = Section:NewButton({
+    Name = "FFJ HUB", -- Name of the button | string, required
+    Description = "★★★★☆",  -- Description of the button | string, optional 
+    Callback = function(value)
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/TSBUtils.lua"))() -- code executed on interaction with the element | function,  optional
+
+    end,
 })
 
-local rake = Window:MakeTab({
-	Name = "The Rake Remastered",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
+local Button = Section:NewButton({
+    Name = "NOBULEM HUB", -- Name of the button | string, required
+    Description = "★☆☆☆☆",  -- Description of the button | string, optional 
+    Callback = function(value)
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/NBLMSCRIPTS/NBLMSCRIPTHUB/main/SKIBIDI"))() -- code executed on interaction with the element | function,  optional
+
+    end,
 })
 
-rake:AddParagraph("ZEEROX HUB","★★★★☆")
-rake:AddButton({
-	Name = "ZEEROX HUB",
-	Callback = function()
-      		loadstring(game:HttpGet'https://raw.githubusercontent.com/RunDTM/ZeeroxHub/main/Loader.lua')()
-  	end    
+local Section1 = Tab:NewSection({
+    Name = "", -- Name of the section | string, required
+    Description = "", -- Description of the section | string, optional 
 })
 
-local tower = Window:MakeTab({
-	Name = "Tower of Hell",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
+local Button = Section1:NewButton({
+    Name = "UNIVERSAL SPEED HACK", -- Name of the button | string, required
+    Description = "★★★★★",  -- Description of the button | string, optional 
+    Callback = function(value)
+         function isNumber(str) if tonumber(str) ~= nil or str == 'inf' then return true end end local tspeed = 3 local hb = game:GetService("RunService").Heartbeat local tpwalking = true local player = game:GetService("Players") local lplr = player.LocalPlayer local chr = lplr.Character local hum = chr and chr:FindFirstChildWhichIsA("Humanoid") while tpwalking and hb:Wait() and chr and hum and hum.Parent do if hum.MoveDirection.Magnitude > 0 then if tspeed and isNumber(tspeed) then chr:TranslateBy(hum.MoveDirection * tonumber(tspeed)) else chr:TranslateBy(hum.MoveDirection) end end end -- code executed on interaction with the element | function,  optional
+
+    end,
 })
 
-tower:AddParagraph("SPRIN HUB","★★★★☆")
-tower:AddButton({
-	Name = "SPRIN HUB",
-	Callback = function()
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/dqvh/dqvh/main/SprinHub",true))()
-  	end    
+local Button = Section1:NewButton({
+    Name = "INFINITY YIELD", -- Name of the button | string, required
+    Description = "★★★★★",  -- Description of the button | string, optional 
+    Callback = function(value)
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))() -- code executed on interaction with the element | function,  optional
+
+    end,
 })
 
-
-
-local Player = Window:MakeTab({
-	Name = "Player",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
+local Tab3 = Window:NewTab({
+    Name = "Murder Mystery 2", -- Name of the tab | string, required
+    Icon = "rbxassetid://15487933546" -- Icon for the tab button | string, optional
 })
 
-Player:AddToggle({
-	Name = "Infinite Jump",
-    Flag = "InfJump",
-	Default = false,
-	Callback = function()end
+local Section4 = Tab3:NewSection({
+    Name = "Murder Mystery 2", -- Name of the section | string, required
+    Description = "  Scripts", -- Description of the section | string, optional 
 })
 
-local TargetWalkspeed
-Player:AddSlider({
-	Name = "Speed",
-	Min = 0,
-	Max = 250,
-	Default = 0,
-	Color = Color3.fromRGB(128, 128, 128),
-	Increment = 1,
-	ValueName = "Walk Speed",
-	Callback = function(Value)
-		TargetWalkspeed = Value
-	end   
+local Button = Section4:NewButton({
+    Name = "SHAPSANIX HUB", -- Name of the button | string, required
+    Description = "★★★★★",  -- Description of the button | string, optional 
+    Callback = function(value)
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/Roman34296589/SnapSanix-GUI-MM2/main/SnapSanix%20GUI%20mm2.lua'))() -- code executed on interaction with the element | function,  optional
+
+    end,
 })
 
-OrionLib:Init()
+local Button = Section4:NewButton({
+    Name = "DEMONIC HUB", -- Name of the button | string, required
+    Description = "★★★☆☆",  -- Description of the button | string, optional 
+    Callback = function(value)
+         loadstring(game:HttpGet(("https://raw.githubusercontent.com/Yousuck780/mm2/main/mm2"), true))() -- code executed on interaction with the element | function,  optional
 
-game:GetService("UserInputService").JumpRequest:Connect(function()
-	if OrionLib.Flags["InfJump"].Value then
-		game.Players.LocalPlayer.Character.Humanoid:ChangeState("Jumping")
-	end
-end)
+    end,
+})
 
-game:GetService("RunService").RenderStepped:Connect(function()
-    pcall(function()
-        if game.Players.LocalPlayer.Character.Humanoid.MoveDirection.Magnitude > 0 then
-            game.Players.LocalPlayer.Character:TranslateBy(game.Players.LocalPlayer.Character.Humanoid.MoveDirection * TargetWalkspeed/100)
-        end
-    end)
-end)
+local Button = Section4:NewButton({
+    Name = "SHRIMPS HUB", -- Name of the button | string, required
+    Description = "★★☆☆☆",  -- Description of the button | string, optional 
+    Callback = function(value)
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/ShrimpsHub/ShrimpsHub/main/ShrimpsHub"))() -- code executed on interaction with the element | function,  optional
+
+    end,
+})
+
+local Section5 = Tab3:NewSection({
+    Name = "", -- Name of the section | string, required
+    Description = "", -- Description of the section | string, optional 
+})
+
+local Button = Section5:NewButton({
+    Name = "UNIVERSAL ESP", -- Name of the button | string, required
+    Description = "★★★★★",  -- Description of the button | string, optional 
+    Callback = function(value)
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/Qiwikox/Mm2-Scripts/main/ESP_MM2.txt'))() -- code executed on interaction with the element | function,  optional
+
+    end,
+})
+
+local Tab4 = Window:NewTab({
+    Name = "Destruction Simulator", -- Name of the tab | string, required
+    Icon = "rbxassetid://15487933546" -- Icon for the tab button | string, optional
+})
+
+local Section6 = Tab4:NewSection({
+    Name = "", -- Name of the section | string, required
+    Description = "", -- Description of the section | string, optional 
+})
+
+local Button = Section6:NewButton({
+    Name = "SHRIMPS HUB", -- Name of the button | string, required
+    Description = "★★★★★",  -- Description of the button | string, optional 
+    Callback = function(value)
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/ShrimpsHub/ShrimpsHub/main/ShrimpsHub"))() -- code executed on interaction with the element | function,  optional
+
+    end,
+})
+
+local Button = Section6:NewButton({
+    Name = "DESTRUCTION SCRIPT", -- Name of the button | string, required
+    Description = "★★★★★",  -- Description of the button | string, optional 
+    Callback = function(value)
+         loadstring(game:HttpGet("https://waza-scripts.vercel.app/script/DestructionSimulator"))() -- code executed on interaction with the element | function,  optional
+
+    end,
+})
